@@ -44,14 +44,14 @@ Independentemente do tema escolhido, a versão final da aplicação deverá cont
 
 ## ⏱️ Cronograma e Pontuação das Entregas
 
-| Etapa | Foco da Entrega | Prazo Estimado |
-| :--- | :--- | :--- | :--- |
-| **Entrega Parcial 1** | Planejamento, Modelagem (MER/DER) e Protótipos | Semana 3 |
-| **Entrega Parcial 2** | Estrutura MVC Inicial e Sistema de Rotas | Semana 5 |
-| **Entrega Parcial 3** | Conexão de Banco de Dados (PDO) e CRUD Inicial (C e R) | Semana 7 |
-| **Entrega Parcial 4** | CRUD Completo da Entidade (C, R, U, D) e Validações | Semana 9 |
-| **Entrega Parcial 5** | Sessões, Autenticação de Usuários e Níveis de Acesso | Semana 12 |
-| **Projeto Final** | Sistema Completo, Documentação (*Manual*) e Vídeo de Demonstração | Semana 16 |
+| Etapa                 | Foco da Entrega                                                   | Prazo Estimado |
+|-----------------------|-------------------------------------------------------------------|----------------|
+| **Entrega Parcial 1** | Planejamento, Modelagem (MER/DER) e Protótipos                    | Semana 3       |
+| **Entrega Parcial 2** | Estrutura MVC Inicial e Sistema de Rotas                          | Semana 5       |
+| **Entrega Parcial 3** | Conexão de Banco de Dados (PDO) e CRUD Inicial (C e R)            | Semana 7       |
+| **Entrega Parcial 4** | CRUD Completo da Entidade (C, R, U, D) e Validações               | Semana 9       |
+| **Entrega Parcial 5** | Sessões, Autenticação de Usuários e Níveis de Acesso              | Semana 12      |
+| **Projeto Final**     | Sistema Completo, Documentação (*Manual*) e Vídeo de Demonstração | Semana 16      |
 
 ---
 
