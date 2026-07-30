@@ -1,7 +1,9 @@
 <?php
 // public/index.php
 
-require_once __DIR__ . '/../app/Controllers/HomeController.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-// Teste rápido para validar o ambiente e classes
-echo "<h1>Ambiente configurado com sucesso!</h1>";
+use App\Controllers\HomeController;
+
+$controller = new HomeController();
+$controller->index();

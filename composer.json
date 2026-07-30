@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Henrique Neves da Silva",
+            "email": "ptersnow@gmail.com"
+        }
+    ],
+    "require": {}
+}
