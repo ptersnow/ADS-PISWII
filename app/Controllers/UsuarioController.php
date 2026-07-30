@@ -3,13 +3,7 @@
 namespace App\Controllers;
 
 class UsuarioController {
-    public function listar() {
-        $usuarios = [
-            "Pedro",
-            "Maria",
-            "João"
-        ];
-
+    public function index() {
         require_once __DIR__ . '/../Views/usuarios/index.php';
     }
 }
