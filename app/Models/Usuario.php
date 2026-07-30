@@ -2,7 +2,12 @@
 
 namespace App\Models;
 
-class Usuario {
-    public $nome;
-    public $email;
+use Core\Model;
+
+class Usuario extends Model {
+    public function listar() {
+        $sql = "SELECT * FROM usuarios";
+        $stmt = $this->db->query($sql);
+        return $stmt->fetchAll();
+    }
 }
