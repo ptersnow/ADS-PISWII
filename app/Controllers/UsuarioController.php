@@ -11,4 +11,23 @@ class UsuarioController {
         
         require_once __DIR__ . '/../Views/usuarios/index.php';
     }
+
+    public function show($id) {
+        $usuarioModel = new Usuario();
+        $usuario = $usuarioModel->buscarPorId($id);
+        
+        require_once __DIR__ . '/../Views/usuarios/show.php';
+    }
+
+    public function create() {
+        require_once __DIR__ . '/../Views/usuarios/create.php';
+    }
+
+    public function save() {
+        $nome = $_POST['nome'] ?? '';
+        $email = $_POST['email'] ?? '';
+
+        $usuarioModel = new Usuario();
+        $usuarioModel->criar($nome, $email);
+    }
 }
