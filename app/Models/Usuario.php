@@ -26,4 +26,25 @@ class Usuario extends Model {
         $stmt->bindParam(':email', $email);
         return $stmt->execute();
     }
+
+    public function atualizar($id, $nome, $email) {
+        $sql = "UPDATE usuarios
+                SET nome = :nome, email = :email
+                WHERE id = :id";
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+
+        $stmt->execute();
+    }
+
+    public function deletar($id) {
+        $sql = "DELETE FROM usuarios WHERE id = :id";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }
