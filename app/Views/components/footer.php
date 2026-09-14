@@ -1,8 +1,13 @@
-</main> <!-- Fecha o container do main -->
+        </main> <!-- Fecha o container do main -->
+    </div> <!-- Fecha o container flex -->
 
-    <footer class="mt-12 py-6 border-t border-slate-200 text-center text-sm text-slate-500">
-        <p>&copy; <?= date('Y') ?> - Projeto Integrador Web II. Todos os direitos reservados.</p>
+    <footer class="bg-brand-primary text-white flex items-center justify-center text-sm font-medium z-20">
+        <p>&copy; <?= date('Y') ?> - TechDesk. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
 
 </body>
 </html>

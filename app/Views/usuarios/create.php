@@ -8,16 +8,24 @@ require_once __DIR__ . '/../components/header.php';
 <div class="bg-white p-6 rounded-lg shadow-sm max-w-lg mx-auto">
     <h1 class="text-2xl font-bold text-slate-700 mb-4">Cadastrar Novo Usuário</h1>
 
+    <?php if (!empty($erros)) {
+        foreach ($erros as $erro) {
+            echo "<div class='bg-red-100 text-red-700 p-2 mb-2 rounded'>{$erro}</div>";
+        }
+    }
+    ?>
+
+
     <form action="/usuarios/salvar" method="POST" class="space-y-4">
         <div>
             <label class="block text-sm font-medium text-slate-600 mb-1">Nome:</label>
-            <input type="text" name="nome" required 
+            <input type="text" name="nome" 
                    class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
         <div>
             <label class="block text-sm font-medium text-slate-600 mb-1">E-mail:</label>
-            <input type="email" name="email" required 
+            <input type="text" name="email" 
                    class="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
