@@ -2,12 +2,13 @@
 
 namespace App\Controllers;
 
+use Core\Auth;
 use App\Models\Chamado;
 
 class ChamadoController {
 
     public function __construct() {
-        
+        Auth::requireLogin();
     }
 
     public function index() {

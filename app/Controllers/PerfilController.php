@@ -2,10 +2,12 @@
 
 namespace App\Controllers;
 
+use Core\Auth;
 use App\Models\Usuario;
 
 class PerfilController {
     public function __construct() {
+        Auth::requireLogin();
     }
 
     public function index() {

@@ -2,12 +2,13 @@
 
 namespace App\Controllers;
 
-
+use Core\Auth;
 use App\Models\Chamado;
 
 class DashboardController {
 
     public function __construct() {
+        Auth::requireLogin();
     }
 
     public function index() {
