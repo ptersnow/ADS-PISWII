@@ -2,10 +2,10 @@
 
 return [
     'driver'   => 'mysql', // ou 'pgsql' para PostgreSQL
-    'host'     => 'localhost',
-    'port'     => '3306', // 5432 no PostgreSQL
-    'dbname'   => 'aula_web',
-    'username' => 'aula_web',
-    'password' => 'aula_web',
+    'host'     => $_ENV['MYSQLHOST'] ?? $_ENV['DB_HOST'],
+    'port'     => $_ENV['MYSQLPORT'] ?? $_ENV['DB_PORT'], // 5432 no PostgreSQL
+    'dbname'   => $_ENV['MYSQLDATABASE'] ?? $_ENV['DB_NAME'],
+    'username' => $_ENV['MYSQLUSER'] ?? $_ENV['DB_USER'],
+    'password' => $_ENV['MYSQLPASSWORD'] ?? $_ENV['DB_PASSWORD'],
     'charset'  => 'utf8mb4'
 ];

@@ -7,10 +7,11 @@ Auth::startSession();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titulo ?? 'Sistema Web' ?></title>
+    <title><?= $titulo ?? 'TechDesk' ?></title>
 
-    <!-- CDN do Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -33,44 +34,54 @@ Auth::startSession();
             }
         }
     </script>
-
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-techbg text-slate-800 antialiased font-sans flex flex-col">
 
+    <?php if (Auth::check()): ?>
     <!-- Barra de Navegação Reutilizável -->
-    <nav class="bg-brand-primary text-white flex items-center justify-between px-6 shadow-md z-20 mb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify- h-16">
-                <div class="flex space-x-8">
-                    <a class="font-bold text-3xl text-indigo-400 hover:text-indigo-300 font-extrabold italic tracking-wider" href="/dashboard">TechDesk</a>
+    <nav class="bg-brand-primary text-white shadow-md z-20 mb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="flex items-center justify-between h-16 w-full">
+                
+                <!-- Lado Esquerdo: Logo e/ou Links de Navegação -->
+                <div class="flex items-center space-x-8">
+                    <a class="text-3xl text-indigo-400 hover:text-indigo-300 font-extrabold italic tracking-wider" href="/dashboard">
+                        TechDesk
+                    </a>
                 </div>
 
-                <div class="flex items-center justify-between space-x-4 text-sm">
-                    <?php if (Auth::check()): ?>
-                        <span class="text-slate-400">Olá, <strong class="text-white"><?= htmlspecialchars(Auth::user(), ENT_QUOTES, 'UTF-8'); ?></strong> (<?= htmlspecialchars(Auth::role(), ENT_QUOTES, 'UTF-8'); ?>)</span>
+                <!-- Lado Direito: Perfil e Ações -->
+                <?php if (Auth::check()): ?>
+                    <div class="flex items-center space-x-6 text-sm">
+                        <span class="text-slate-400">
+                            Olá, <strong class="text-white"><?= htmlspecialchars(Auth::user(), ENT_QUOTES, 'UTF-8'); ?></strong> (<?= htmlspecialchars(Auth::role(), ENT_QUOTES, 'UTF-8'); ?>)
+                        </span>
                         
-                        <div class="flex space-x-4 text-sm font-medium">
-                            <button class="hover:text-brand-light transition relative">
+                        <div class="flex items-center space-x-4 font-medium">
+                            <button class="hover:text-brand-light transition relative flex items-center">
                                 <i data-lucide="bell" class="w-6 h-6"></i>
                                 <span class="absolute -top-1 -right-1 bg-status-aberto w-2.5 h-2.5 rounded-full"></span>
                             </button>
-                            <a href="/perfil" class="hover:text-brand-light transition" title="Meu Perfil">
+                            
+                            <a href="/perfil" class="hover:text-brand-light transition flex items-center" title="Meu Perfil">
                                 <i data-lucide="user" class="w-6 h-6"></i>
                             </a>
-                            <a href="/logout" class="hover:text-indigo-300 transition" title="Sair do Sistema">
+                            
+                            <a href="/logout" class="hover:text-indigo-300 transition flex items-center" title="Sair do Sistema">
                                 <i data-lucide="log-out" class="w-6 h-6"></i>
                             </a>
                         </div>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php endif; ?>
+
+            </div>
         </div>
     </nav>
+    <?php endif; ?>
+        
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-    <!-- Container Principal do Conteúdo -->
-    <main class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
-
-        <!-- MENU LATERAL SIDEBAR (250px) -->
+        <?php if (Auth::check()): ?>
         <aside class="bg-sidebar p-4 flex flex-col justify-between shrink-0 shadow-inner">
             <nav class="space-y-3">
                 
@@ -94,3 +105,6 @@ Auth::startSession();
 
             </nav>
         </aside>
+
+        <?php endif; ?>
+        

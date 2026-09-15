@@ -1,14 +1,53 @@
 <?php
 $title = "Sign In - TechDesk";
-require_once __DIR__ . '/../components/header.php';
 ?>
+<?php
+use Core\Auth;
+Auth::startSession();
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $titulo ?? 'TechDesk' ?></title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<!-- Card Centralizador (Proporção idêntica ao Figma) -->
-    <div class="bg-brand-primary w-full rounded-sm p-8 flex flex-col justify-between items-center shadow-2xl">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                    brand: {
+                        primary: '#3066BE',
+                        secondary: '#963484',
+                        light: '#60AFFF',
+                    },
+                    techbg: '#F2F5FF',
+                    status: {
+                        aberto: '#F49097',
+                        atendimento: '#F5E960',
+                        concluido: '#55D6C2',
+                    },
+                    accent: '#DFB2F4'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-primary text-slate-800 antialiased font-sans flex flex-col">
+        
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+
+    <!-- Card Centralizador (Proporção idêntica ao Figma) -->
+    <div class="bg-techbg w-full rounded-sm p-8 flex flex-col justify-between items-center shadow-2xl">
         
         <!-- Título TechDesk (Em itálico e negrito) -->
-        <div class="mt-4">
+        <div class="my-4">
             <h1 class="text-4xl font-extrabold italic text-black tracking-wide">
                 TechDesk
             </h1>
@@ -63,7 +102,7 @@ require_once __DIR__ . '/../components/header.php';
 
     </div>
 
+        </main> <!-- Fecha o container do main -->
 
-<?php
-require_once __DIR__ . '/../components/footer.php';
-?>
+</body>
+</html>

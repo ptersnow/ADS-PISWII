@@ -27,7 +27,11 @@ class Database {
                 self::$db = new PDO($dsn, $config['username'], $config['password'], $opcoes);
 
             } catch (PDOException $e) {
-                die("Erro de Conexão com o Banco de Dados: " . $e->getMessage());
+                error_log("[" . date('Y-m-d H:i:s') . "] Erro de Banco: " . $e->getMessage() . PHP_EOL, 3, __DIR__ . '/../logs/database.log');
+
+                http_response_code(500);
+                require_once __DIR__ . '/../app/Views/erros/500.php';
+                exit;
             }
         }
 
